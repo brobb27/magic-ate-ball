@@ -5,7 +5,7 @@ import { GiEightBall } from 'react-icons/gi'
 function Navbar() {
     return (
         <div id="navbar" >
-            <a id="navbarTitle" href='https://github.com/brobb27/vschool'>Magic Ate Ball <GiEightBall /></a>
+            <Link id="navbarTitle" to='/'>Magic Ate Ball <GiEightBall /></Link>
             <div id="navbarLinks">
                 <Link className="navbarLink" to='/'>HOME</Link>
                 <Link className="navbarLink" to='/favorites'>MY FAVORITES</Link>

@@ -4,7 +4,7 @@ import VenueDetails from './VenueDetails'
 
 function SearchedList() {
     // Context info
-    const { venueList } = useContext(ContextInfo)
+    const { venueList, failedSearch } = useContext(ContextInfo)
 
     // valid restaurants
     const validList = venueList.filter(item => item.categories.length > 0)
@@ -34,7 +34,13 @@ function SearchedList() {
 
     return (
         <div className='homeList'>
-            {resultComponents}
+            {failedSearch === 'failed' ?
+            <div id='failed'>
+                <h1>I'm sorry, you have entered an invalid search. Please try again.</h1>
+                <p>(try somehting like "Salt Lake City, ut" for the location and "italian" or "steak" for the food.)</p>
+            </div>
+            : 
+            resultComponents}
         </div>
     )
 }

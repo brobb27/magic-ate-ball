@@ -5,7 +5,7 @@ import SearchedList from './SearchedList'
 
 function Home() {
     // info from context
-    const { setVenueList, clientIdSquare, clientSecretSquare } = useContext(ContextInfo)
+    const { setVenueList, clientIdSquare, clientSecretSquare, setFail } = useContext(ContextInfo)
 
     //State for location and food type
     const [shakeDetails, setShakeDetails] = useState({location: '', foodType: ''})
@@ -18,11 +18,18 @@ function Home() {
         e.preventDefault()
 
         axios.get(`https://api.foursquare.com/v2/venues/search?client_id=${clientIdSquare}&client_secret=${clientSecretSquare}&v=20210725&near=${shakeDetails.location}&intent=browse&radius=10000&query=${shakeDetails.foodType}&limit=15`)
-        .then(res => setVenueList(() => { 
-            console.log(res.data.response.venues); 
+        .then(res => {
+            setFail('searching');
+
+            setVenueList(() => { 
+            console.log(res) 
             return [...res.data.response.venues]
-        }))
-        .catch(err => console.log(err))
+            })
+        })
+        .catch(err => {
+            setVenueList([])
+            setFail('failed')
+        })
     }
 
     // Handles form changes

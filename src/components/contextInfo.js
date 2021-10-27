@@ -12,6 +12,7 @@ function ContextInfoProvider(props) {
     // State of current 8 restaurants
     const [venueList, setVenueList] = useState([])
     const [favoritesList, setFavoriteList] = useState(localFavoriteList || [])
+    const [failedSearch, setFail] = useState('searching')
 
     // Client id and secret id foursquare (make context to handle these)
     const clientIdSquare = 'YUC3ZX0JTCE5XH1GBJNMV1XWA33FQ5UY324J4C1DXTCQ0XRH'
@@ -24,7 +25,7 @@ function ContextInfoProvider(props) {
 
 
     return (
-        <ContextInfo.Provider value={{clientIdSquare, clientSecretSquare, venueList, setVenueList, favoritesList, setFavoriteList}}>
+        <ContextInfo.Provider value={{clientIdSquare, clientSecretSquare, venueList, setVenueList, favoritesList, setFavoriteList, failedSearch, setFail}}>
             {props.children}
         </ContextInfo.Provider>
     )

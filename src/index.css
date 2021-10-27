@@ -127,18 +127,20 @@
 
 .homeList {
 	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
 	place-items: center;
 	background-color: white;
 	color: black;
-	padding: 1rem 0rem;
-	width: 100%;
+	padding: 1rem 0.5rem;
 }
 
 .detailComponent {
 	padding: 2rem 0rem;
-	border-bottom: dotted #999999b0 0.5rem;
-	max-width: 20rem;
+	outline: solid #999999b0 0.2rem;
+	border-radius: 0.5rem;
 	line-height: 1.3rem;
+	margin: 1rem 0rem;
+	width: 70%;
 }
 
 .detailComponent > * {
@@ -158,17 +160,26 @@
 	color: #5f1318;
 }
 
+#failed {
+	padding: 3rem 0rem;
+	width: 70%;
+}
+
+#failed > * {
+	padding: 1rem 0rem;
+}
+
 /* Detail page styles */
 
 #detailPage {
-	padding-top: 8.5rem;
+	padding-top: 6rem;
 	margin: 0rem 1.5rem 2rem;
 }
 
 #detailPage > h1 {
 	font-size: 1.5rem;
-	font-style: italic;
-	text-decoration: underline;
+	border-bottom: solid black 0.1rem;
+	margin: 2rem 2rem;
 }
 
 #detailPage > div {
@@ -176,7 +187,12 @@
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
-	margin: 0.8rem 0rem;
+	margin: 2rem 0rem 1rem;
+	margin-left: auto;
+	margin-right: auto;
+	width: 65%;
+	outline: 0.15rem solid #999999b0;
+	border-radius: 0.5rem;
 }
 
 #detailPage > div > h2 {
@@ -191,6 +207,13 @@
 	height: 15.5rem;
 	width: 15.5rem;
 	border-radius: 1rem;
+}
+
+#detailPage > div > div {
+	border-top: solid 0.1rem #999999b0;
+	text-align: left;
+	width: 100%;
+	padding: 1rem;
 }
 
 #detailPage > button {
@@ -222,12 +245,14 @@
 
 #favoritesList > h1 {
 	font-size: 1.5rem;
-	font-style: italic;
-	text-decoration: underline;
+	border-bottom: black 0.1rem solid;
 }
 
 #favoritedVenue {
 	margin: 1rem 0rem;
+	outline: solid 0.15rem #999999b0;
+	border-radius: 0.5rem;
+	width: 80%;
 }
 
 #favoritedVenue > h2 {
@@ -238,7 +263,12 @@
 	margin: 0.2rem 0rem;
 }
 
-#favoritedVenue > button {
+#favoritedVenue > div {
+	border-top: 0.1rem solid #999999b0;
+	padding: 1rem;
+}
+
+#favoritedVenue > div > button {
 	border: none;
 	border-radius: 7px;
 	color: #f8f6ee;
@@ -247,9 +277,10 @@
 	width: 11rem;
 	transition: 0.3s;
 	font-size: 0.9rem;
+	margin-top: 0.5rem;
 }
 
-#favoritedVenue > button:hover {
+#favoritedVenue > div > button:hover {
 	background-color: #ad2831;
 	cursor: pointer;
 }
@@ -358,7 +389,7 @@
 
 	.detailComponent {
 		padding: 2rem 0rem;
-		width: 35%;
+		width: 70%;
 	}
 
 	/* all top section styles */
@@ -373,7 +404,8 @@
 
 	/* Detail page media queries */
 	#detailPage > h1 {
-		font-size: 1.8rem;
+		font-size: 3rem;
+		margin: 1rem 2rem;
 	}
 
 	.detailImg {
@@ -389,7 +421,7 @@
 	}
 
 	#favoritesList > h1 {
-		font-size: 1.8rem;
+		font-size: 2.5rem;
 	}
 
 	#favoritedVenue > h2 {
