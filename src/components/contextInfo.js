@@ -9,7 +9,7 @@ function ContextInfoProvider(props) {
     const retrievedData = localStorage.getItem('localFavoriteList')
     const localFavoriteList = JSON.parse(retrievedData)
 
-    // State of current 8 restaurants
+    // State of current 15 restaurants
     const [venueList, setVenueList] = useState([])
     const [favoritesList, setFavoriteList] = useState(localFavoriteList || [])
     const [failedSearch, setFail] = useState('searching')
